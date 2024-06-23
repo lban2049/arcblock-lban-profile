@@ -21,6 +21,7 @@ const getDevNextConfig = () => {
 
 const nextConfig = {
   reactStrictMode: false,
+  transpilePackages: ['mui-tel-input'],
   ...getDevNextConfig(),
 };
 
