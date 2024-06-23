@@ -17,6 +17,8 @@ DB_NAME = arcprofile
 
 4. 运行 `npm run dev` 启动服务。
 
+5. 部署时需修改 `next.config.js` 中的 `API_BASE_URL` 为部署的应用名称。
+
 
 ## 功能介绍
 

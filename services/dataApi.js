@@ -1,7 +1,7 @@
 // save user
 export async function saveUser(user) {
   try {
-    const response = await fetch('/api/users', {
+    const response = await fetch(`${process.env.API_BASE_URL}/api/users`, {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {
@@ -18,7 +18,7 @@ export async function saveUser(user) {
 // get user
 export async function getUser(id) {
   try {
-    const response = await fetch(`/api/users/${id}`, {
+    const response = await fetch(`${process.env.API_BASE_URL}/api/users/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
