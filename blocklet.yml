@@ -14,9 +14,10 @@ repository:
   type: git
   url: git+https://github.com/blocklet/create-blocklet.git
 specVersion: 1.1.1
-version: 0.1.0
+version: 0.1.1
 logo: logo.png
 files:
+  - .env
   - .next
   - logo.png
   - screenshots
@@ -43,12 +44,23 @@ requirements:
   cpu: "*"
 scripts:
   preStart: node api/hooks/pre-start.js
+  postInstall: npm install --ignore-scripts
   dev: npm run start
 environments:
   - name: CHAIN_HOST
     description: What's endpoint of the chain?
     required: true
     default: https://beta.abtnetwork.io/api/
+    secure: false
+  - name: MONGODB_URL
+    description: mongodb url
+    required: true
+    default: ""
+    secure: false
+  - name: DB_NAME
+    description: mongodb name
+    required: true
+    default: ""
     secure: false
 capabilities: {}
 screenshots: []
