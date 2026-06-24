@@ -1,17 +1,18 @@
 {
   "name": "arcblock-lban-profile",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "blocklet dev",
-    "start": "nodemon -w api api/index.js",
+    "start": "npm i && nodemon -w api api/index.js",
     "lint": "next lint",
     "lint:fix": "npm run lint -- --fix",
     "clean": "node scripts/build-clean.js",
     "bundle": "npm run bundle:client && npm run bundle:api",
+    "build": "next build",
     "bundle:client": "PUBLIC_URL='/.blocklet/proxy/z2qaELdfmnYQYTLoy21GY6iaTBBEnBjXjSzZs' next build",
     "bundle:api": "npm run clean && blocklet bundle --zip --create-release",
-    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle --app-id did:abt:zNKXtStoP8Umvo1ZemvLt4476Cn7oLziCFAF",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "prepare": "husky install",
     "bump-version": "zx --quiet scripts/bump-version.mjs"

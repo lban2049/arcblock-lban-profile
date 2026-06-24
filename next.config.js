@@ -24,8 +24,8 @@ const nextConfig = {
   assetPrefix: '.',
   transpilePackages: ['mui-tel-input'],
   env: {
-    // API_BASE_URL: "/arcblock-lban-profile",
-    API_BASE_URL: '',
+    API_BASE_URL: "/arcblock-lban-profile",
+    // API_BASE_URL: '',
   },
   ...getDevNextConfig(),
 };
